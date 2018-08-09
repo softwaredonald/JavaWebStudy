@@ -1,0 +1,56 @@
+<!ELEMENT 书架 (书+)>
+<!ELEMENT 书 (书名,作者,售价)>
+<!ELEMENT 书名 (#PCDATA)>
+<!ELEMENT 作者 (#PCDATA)>
+<!ELEMENT 售价 (#PCDATA)>
+
+<!--
+声明语法<!ELEMENT 元素名称 元素类型or元素内容> 上面就是“内容”
+元素类型包括：EMPTY:用于定义空元素，例如<br/> <hr/>；ANY：表示元素内容为任意类型
+元素内容方式：1. 逗号分隔符，内容的出现顺序必须与声明时一致<!ELEMENT MYFILE (TITLE,AUTHOR,EMAIL)>
+			 2. 用|分割，表示任选其一，至多出现一个<!ELEMENT MYFILE (TITLE|AUTHOR|EMAIL)>
+			 3. 元素内容中可以使用+：一次或者多次出现；？：0次or1次；*：0次or多次；什么都没写，就是出现一次
+			 4. 可以使用()进行多次设置
+			 	例子：<!ELEMENT MYFILE ((TITLE*,AUTHOR?,EMAIL)*|COMMENT)>
+标签需要一个属性：
+	ATTLIST = attribute list
+	<!ATTLIST 元素名
+		属性名1 属性值类型 设置说明
+		属性名2 属性值类型 设置说明
+		……
+	>
+	例子：
+	<!ATTLIST 商品
+		类别 CDATA #REQUIRED 必须要写
+		颜色 CDATA #IMPLIED 可选的
+		生产者 CDATA #FIXED 该属性取值固定为一个值，XML文档不能设置属性，DTD文件需要提供该属性。XML中不强制写
+		生产日期 CDATA 什么都没写，就是默认值，XML中不强制写
+		
+	>
+属性的值的类型
+		1. CDATA：字符串
+		2. ENUMERATED:枚举，一组取值的列表，XML中的这个元素只能从这个列表选择一个
+		3. ID：属性的设置值为一个唯一值，ID只能由字母下划线开始不能出现空白字符
+		4. ENTITY（实体）
+			实体用于为一段内容创建一个别名，在XML文档中就可以使用别名引用这段内容
+			引用实体和参数实体，前者在XML中使用，后者在DTD中自己使用
+			a. 引用实体，主要在XML中使用
+			在这个标签中可能会重复使用相同的内容，将这个东西放在一个变量中，数量可能是一个，
+			<!ENTITY copyright "I am a programmer">
+			引用的时候就可以在XML文件中使用
+				&copyright放在指定的位置，就可以变成 I am a programmer
+			b. 参数实体,这个是在dtd文件中自己使用，就是讲重复的相同内容单独出来，在下面服用，使用% 进行复用
+			举例：
+			<!ENTITY % common.attributes
+				"id ID #IMPLIED
+				account CDATA #REQUIRED
+				"
+			>
+			......
+			<!ENTITY purchaseOrder (%common.attributes;| price DCATA #REQUIRED)>
+			<!ENTITY item %common.attributes;>
+			
+			
+			
+			
+-->

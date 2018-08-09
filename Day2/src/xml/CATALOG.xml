@@ -1,0 +1,18 @@
+<?xml version = "1.0"?>
+
+<!-- 这里可以放DTD -->
+
+<CATALOG>
+	<PRODUCT>
+		<SPECIFICATIONS>AAA</SPECIFICATIONS>
+		<OPTIONS>AAA</OPTIONS>
+		<PRICE>AAA</PRICE>
+		<NOTES>AAA</NOTES>
+	</PRODUCT>
+</CATALOG>
+
+<!-- 
+	dtd对数据的约束很差，而且他们支持的类型相对较少，数据类型相对较少
+
+
+ -->

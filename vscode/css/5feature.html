@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>属性选择器</title>
+    <style>
+        span[class] {
+            color: green;
+        }
+
+        [id] {
+            font-size: 100px;
+        }
+
+        span[id="i4"] {
+            color: yellow;
+        }
+
+        [id="i3"] {
+            color: blue;
+        }
+
+        /* ~：全部属性中包含这个属性的 */
+        span[class~="demo"] {
+            font-size: 40px;
+        }
+
+        /* ^表示以这个字符开头的属性 */
+        [id^="cf"] {
+            color: red;
+        }
+
+        /* $表示以这个字符串结尾的属性 */
+        [id$="ui"] {
+            color: indianred;
+        }
+
+        /* *表示这个字符串出现在某些属性中就可以 */
+        [class*="bc"] {
+            font-size: 150px;
+
+        }
+    </style>
+
+
+
+
+</head>
+
+<body>
+    <p>
+        <span class="cur">1</span>
+        <span class="cur demo">2</span>
+        <span id="i3">3</span>
+        <span id="i4">4</span>
+        <hr>
+        <span id="i6ui">北京</span>
+        <span id="cfi7">天津</span>
+        <span id="isd8">上海</span>
+        <span class="iabc9">重庆</span>
+    </p>
+</body>
+
+</html>

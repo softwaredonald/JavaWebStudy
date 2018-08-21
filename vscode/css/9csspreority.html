@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css优先级，显示模式</title>
+    <style>
+        #id1{
+            color:red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>第一原则</h1>
+    <p>优先级：内联》嵌入》外部引入》继承》默认</p><br>
+    <p>a 超链接标签颜yeyao色除外</p>
+    <p>css使用那个规则时：就近原则，层叠性质由来，所以外部引入和嵌入会出现互换，看style和link哪个靠后</p>
+    <hr>
+    <h1>第二原则</h1>
+    <h2>ID>类（伪类）>标签>继承>默认</h2>
+    <h3>优先级计算</h3>
+    <p>255进一级</p>
+    <h2>但是如果加入！important的注释，那么他的优先级最高</h2>
+
+    <h3>
+        display可以为 none：不显示；block：变成一块独占一行 内联元素变成块元素；inline：一个挨着一个，块变内联；inline-block：按照行内标签进行排版，但是可以设置行高<strong id= "id1">而且高度可以影响行高</strong>
+    </h3>
+
+
+
+</body>
+
+</html>

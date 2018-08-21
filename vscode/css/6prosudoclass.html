@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>伪类选择器</title>
+    <style>
+        a:link{
+            color:red;
+        
+        }
+        a:visited{
+            color:green;
+        }
+        a:hover{
+            color:darkblue;
+            font-size:120px;
+        }
+        a:active{
+            color:chartreuse;
+            background-color: aqua;
+        }
+        input:focus{
+            color:blue;
+            font-size: 40px;
+        }
+    </style>
+
+
+
+</head>
+<body>
+    <h1>伪类</h1>
+    <p>
+        :link
+        伪类将用于未被访问过的链接。IE6不兼容，解决问题直接使用a标签
+        <br>
+        ：hover
+        伪类将应用于有鼠标指针悬停于其上的元素。IE6中只能用于a连接，IE7之后所有元素都支持
+        <br>
+        ：active
+        伪类将用于被激活的元素，例如被点击的链接、被按下的按钮等。
+        <br>
+        ：visited
+        伪类将用于已经被访问过的链接
+        <br>
+        ：focus
+        伪类将应用于拥有键盘输入焦点的元素
+        <br>
+        <h2>顺序问题：LoVe HAte原则</h2>
+        <h3>练习案例：电商菜单</h3>
+    </p>
+    <a href="#">首页</a>
+    <a href="#">产品</a>
+    <a href="#">新闻</a>
+    <a href="#">体育</a>
+    <a href="#">other</a>
+    <input type="text">
+
+
+
+
+
+
+</body>
+</html>

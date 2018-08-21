@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>伪元素选择器</title>
+    <style>
+
+        /* 第一个必须是span标签，第二：是第一个孩子 */
+    span:first-child{
+        color: red;
+        font-size: 50px;
+    }
+    p:first-letter{
+        font-size: 40px;
+        color:palegreen;
+    }
+
+    p::first-line{
+        color:goldenrod;
+    
+    }
+    #d::after{
+        content:"----------------";
+    }
+    #d::before{
+        content: "#############3##";
+    }
+    
+    
+    
+    
+    </style>
+    <!-- :first-line伪元素，第一行，只能用于块级元素 -->
+
+
+    <!-- ：first-letter伪元素，第一个字母，只能用于块级元素 -->
+
+
+    <!-- ：before和：after，可以设置元素前后的内容，配合使用content谁知相关内容 -->
+
+</head>
+<body>
+    <h1>老马55复习选择器</h1>
+    <div id= "d">
+        <span>我是大哥</span>
+        <span>二哥</span>
+        <span>三哥</span>
+        <span>lala</span>
+        <span>baabababa</span>
+    </div>
+    <p>
+        <span>4</span>
+        <span>3</span>
+        <span>2</span>
+        <span>1</span>
+    </p>
+    <p>We say what people are thinking and cover the issues that get people talking balancing Australian and global moments — from politics to pop culture.</p>
+</body>
+</html>

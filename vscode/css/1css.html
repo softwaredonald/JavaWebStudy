@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        p {
+            color: blueviolet;
+            font: 2em sans-serif;
+
+        }
+    </style>
+    <link rel="stylesheet" href="./css/1.css" >
+
+    <body>
+        <p>内联样式，优先级最高</p>
+        <div style="color:red; font-size:24px;border:1px solid blue;">这是div</div>
+
+        <p>
+            这个是嵌入样式，页内样式，优先级第二
+        </p>
+        <h1>这个是外联样式，优先级第三</h1>
+
+        <h2 style="color:darkorange; background-color:gray">还有导入样式，用@import 引入，但是css不能进行并行下载，不推荐使用，导入样式的书写必须在所有css规则书写之前，优先级倒数第二</h2><br>
+        <h3 style="color: lime; font-size: 23px;">所有标签都有默认的样式，叫缺省样式，优先级别最低</h3>
+
+    </body>
+
+</html>

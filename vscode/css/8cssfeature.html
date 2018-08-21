@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css的特性：层叠性、继承性</title>
+    <style>
+        /* 这个可以从油漆的颜色入手 */
+        p{
+            color:red;
+        }
+        p{
+            color:blue;
+        }
+        /* 继承性：父容器设置的样式，自容器也可以享受相同待遇 */
+        a{color:inherit}
+    </style>
+</head>
+<body>
+    <p>this is sentence.
+        <span>继承与p标签</span><br><span>color text-系列 font- line- cursor都是可以继承，但是边框，外边距，内边距，背景，定位元素高宽属性是不可以继承的，所有和盒子相关的属性都是不能继承</span>
+        <a href="#">这个是链接也继承p的属性，但是不继承</a>
+
+    </p>
+
+</body>
+</html>

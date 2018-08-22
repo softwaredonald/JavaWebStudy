@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>结构语义标签</title>
+</head>
+<body>
+    <p>html5中新增新的特性,IE9+其他浏览器支持</p>
+    <p>html5shin.js</p>
+    <!-- <p></p> -->
+    <!-- <div></div> -->
+    <nav>导航标签</nav>
+    <section>区块标签</section>
+    <header>这里是头部</header>
+    <article>
+        <h1>这里是正文区域</h1>
+        <p>A message is a discrete unit of communication intended by the source for consumption by some recipient or group of recipients</p>
+
+    </article>
+    <aside>
+        这里是侧边栏
+    </aside>
+    <footer>
+        <hr>
+        这里是网站底部
+    </footer>
+    <hr>
+    <hr>
+    <hr>
+    <h1>html5新增的智能表单标签</h1>
+        <form action="#">
+            <input type="text" name="" id="">
+            <input type="radio" name="" id="">
+            <input type="checkbox" name="" id="">
+            <input type="reset" value="">
+            <input type="submit" value="">
+            <input type="button" value="按钮">
+            <input type="password" name="" id="">
+            <input type="hidden" name="" id = "tmd" value="123">
+
+            <br>
+            <p>
+                上面的问题在于没有办法限制输入格式，安全问题，正则表达式等等都需要js或者后台的服务器进行
+            </p>    
+            <hr>
+            <p>于是，HTML5出现了很多新标签</p>
+            <input type="email" name="" id="" value = "输入email">
+            <input type="button" value="简单尝试">
+            <input type="number" name="" id="">
+            <input type="search" name="" id="">
+            <input type="color" name="" id="">
+            <p>还有新的标签，自己调整</p>
+
+        </form>
+        <hr>
+        <hr>
+        
+        
+        <h1>HTML5多媒体标签</h1>
+        <p>
+            ie9只支持MP3
+        </p>
+        <audio src="./" controls autoplay>浏览器不支持html5的音乐无播放器</audio>
+        <audio src="./" controls autoplay>浏览器不支持html5的音乐无播放器</audio>
+        <audio controls>
+            <!-- 存放多个音频 -->
+            <source src = "./">
+            <source src = "./">
+            <source src = "./">
+            <source src = "./">
+        </audio>
+
+        <video src="./" width= "400" hight="400" controls autoplay></video>
+        多个视频尝试
+
+        <video>
+            <source src="">
+            <source src="">
+            <source src="">
+            <source src="">
+            <source src="">
+        </video>
+
+
+<hr>
+<p>
+    其他内容<br>
+    id:唯一标识元素，在一个页面中不能重复,不同页面可以重复           <br>
+    name:可以用于定义一组标签，可以重复。  表单提交到后端处理的         <br>
+    style：定义标签的样式           <br>
+    class：定义标签的样式类           <br>
+    id，class都是css选择器和js的dom开发必备的基础           <br>
+    img标签和a标签一般都会设置title属性           <br>
+</p>
+<hr><h1>标签类型---显示模式</h1>
+<p>
+    <h3>行内元素：</h3><br>
+    行内元素不沾油独立的区域，仅仅靠自身的字体大小和图像尺寸来支撑结构。一般不可以设置宽度、高度、对齐等属性，常常用于控制页面中文本的样式<br>
+    常见的行内元素：
+    &lt;strong&gt;
+    &lt;b&gt;
+    &lt;em&gt;
+    &lt;i&gt;
+    &lt;del&gt;
+    &lt;s&gt;
+    &lt;ins&gt;
+    &lt;u&gt;
+    &lt;a&gt;
+    &lt;span&gt;
+   <h3>块元素：</h3><br>
+   每个块元素都会占据一整行或者多整行，可以对齐设置宽度，高度，对齐等属性，常常用于网页布局和网页结构的搭建。<br>
+   常见的块元素：
+   &lt;h1&gt; //
+   &lt;p&gt; //
+   &lt;div&gt; // 
+   &lt;ul&gt; // 
+   &lt;ol&gt; // 
+   &lt;li&gt; //
+<br>
+下面就是上面的例子
+<hr>
+<p>
+    这里是段落标签，不让和别人公用这行
+</p>
+<span>这里是span标签，他可以和别人公用一行</span>
+<a href="#">这里是超级链接标签</a><strong>这里加粗了</strong>
+<p>这里是段落2</p>
+
+
+
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

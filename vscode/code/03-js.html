@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js数组</title>
+</head>
+<body>
+    <h3>pop和push组成栈的结构：先进后出</h3>
+    <p>pop()从数组尾部弹出一个元素<span class = "s1">并返回弹出的元素</span>，push从数组尾部压入一个元素，并<span class="s1">返回数组的新长度</span></p>
+    <h3>shift and unshift队列结构：先进先出</h3>
+    <p>从数组的头部弹出一个元素，并<span class = "s1">返回次元素</span>，索引为0，unshift从头部塞入一个元素 <span class="s1">返回数组新长度</span> </p>
+    var t=[] 
+    <br>t.push(1)
+    <br>t.push(2)
+    <br>t.push(3)
+    <br>console.log(t.pop())
+    <br>console.log(t.shift())
+    <br>console.log(t.unshift(4)) <hr>
+    <h3>
+        数组排序
+    </h3>
+    <p>sort() 排序是按照字符串方式进行比较，数字会改成字符串 <span class="s1">所以数值排序要按照下面算</span></p>
+    <hr>
+
+    <h3>函数式编程</h3>
+    <p>sort + 函数式编程</p>
+    <pre>
+        要求：参数接收两个参数，要求返回值为：负数，0，正数。如果放回负数代表第一个参数小于第二个参数，0位相等，正数则大于。
+        var comparefun= function(a,b){
+            return a-b;
+        };
+        var m=[51,3,4,5,12,6];
+        console.log(m);
+        m.sort(m);
+        console.log(m);
+        利用函数式编程：
+        m.sore(comparefun)
+
+
+        m.sort(function(a,b){return a-b;});
+
+    </pre>
+
+
+    <script>
+        var a = [1,3,4,5,'dsaf'];
+        console.log(a);
+        for(var k in a){
+            console.log(a[k]);
+        }
+        
+        </script>
+</body>
+</html>

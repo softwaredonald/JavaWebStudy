@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>基本包装类型</title>
+    <style>
+    .s1{
+        color:blue;
+        font-size:1.3em;
+    }
+    p{
+        font-size:1.1em;
+    } 
+    .h11{
+        color:darkred;
+    }
+    .s2{
+        color:green;
+    }  
+    .s3{
+        color:orange;
+    }
+    .s4{
+        background-color: lightyellow;
+    }
+        
+        
+    </style>
+
+</head>
+<body>
+    <h1 class="h11">Note 1:</h1>
+    <p>针对boolean，number, string 这三类变量，在 <span class="s1">读取</span>时，JS执行引擎都会自动创建一个临时包装对象，帮助它访问包装对象的方法使用完成后立即销毁包装对象</p>
+    <h1>Boolean</h1>
+    <p>toString()转换之后，再转化时就变成另外一个，所以，会造成误解 <span class="s3">以后尽量少使用</span> <br> instanceof 可以查是否是boolean: t instanceof boolean true</p>
+    <h1>Number</h1>
+    <pre>
+        var t = new Number(); //这个根本不用
+        //直接使用就可以
+        使用方法 #87
+    </pre>
+</body>
+</html>

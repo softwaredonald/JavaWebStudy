@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>值类型和引用类型及参数传递</title>
+    <style>
+        h1{
+            color:red;
+        }
+    .s1{
+        color:darkmagenta;
+        font-size: 1.2em;
+
+    }
+    .s2{
+        color:darkblue;
+        font-size: 1.2em;
+
+    }
+    .s3{
+        color:brown;
+        font-size: 1.3em;
+    }
+    .s4{
+        color: orangered;
+        font-size: 1.2em;
+    }
+    </style>
+</head>
+<body>
+    <h1>
+        栈内存，堆内存
+    </h1>
+
+
+    <p>
+        在栈内存中存一个指引，指到堆内存中。
+        <br>
+        <span class = "s1">值类型--基本类型和简单类型</span>：数值、布尔、nullundefined <br>
+        <span class = "s2">引用类型--复杂类型</span>：对象、数组、函数 <br>
+        <span class = "s1">变量对象！！存放变量名字和值</span>
+    </p>
+
+    <h1>
+        值类型和引用类型复制与传递
+    </h1>
+    <p>
+        值类型和引用类型是不一样的<br>
+        <span class= "s1">总结：值类型：简单拷贝副本；引用类型：相同指引</span>
+        <br>
+
+        变量对象：变量名+具体值（例如 a:9）但是还有可能是：变量名+地址（例如 a：0x3342fe）如果这样就有个问题：<span class="s3">c指向0x3342fe,d也是相同地址，于是：改变期中任何一个数值都会改变在堆内存中的值</span> <br>
+        有了上面的问题，就会有下面的知识：
+    </p>
+    <h1>
+        函数参数的值传递和引用传递
+    </h1>
+    <pre>
+        var a = 9, b={ "name":lina; age:23};
+        
+        function demo(a,b){
+            c1 = 28;
+            c2.name=Donald;
+        }
+
+        demo(a,b.name)
+
+
+        console.log(a) // a=>9
+        console.log(b) //b.name=>Donald
+
+
+    </pre>
+    <span class= "s4">
+        为何会出现上面的问题：a是简单的复制，b的name 背c2改变了指引
+    </span>
+
+    <h1>
+        arguments参数
+    </h1>
+
+    <span class="s2">
+        当调用函数时，形参少于实参时，多余的实参就会放到"arguemnts"参数中。但是arguments不是个数组而是个object，但是他有数组的属性，可以称之为类数组
+    </span>
+    <span class="s3">
+        arguments 包含以下特征：多余的参数、callee（这个自身的函数）、length、symbol.liter
+        <br>
+        
+    </span>
+    <p>练习题： 实现一个max 方法，可以接受任意多个参数，返回参数中的最大值 <br>
+    <br>
+    <br>
+        答案：</p>
+
+    <pre>
+                    function myMax(){
+                        //调用函数，传递参数为空
+                        if (arguments.length < =0){
+                            return NaN;
+                        }
+
+                        var max = arguments[0];
+                        
+                        for (var i = 0; i < arguments.length;i++){
+                            if (arguments[i]>max){
+                                max=arguments[i];
+                            }
+                        }
+                        return max;
+                    }
+                    var t = myMax(10,9,2,33,22,18);
+                    console.log(t);
+    </pre>
+
+    <h1>
+        函数参数的封装
+    </h1>
+    <p>
+        <span class="s1">
+            一个函数封装一个矩阵：矩阵的 x，y坐标，width、height、背景色、文字信息、文字坐标、文字字体颜色
+
+        </span> <br> <br>
+        <span class = "s2">
+            对比解决方案如下：
+        </span>
+    </p>
+    <pre>           
+        -----------1
+                    //全部使用形参处理矩阵参数
+                    //开发出现的问题:1. 很难记忆参数的具体情况 2.传递参数的时候，顺序错了就坏了 3.编写代码不方便
+                    function rectan(x,y,width,height,bgcolor,text,text_color,text_x,text_y){
+                    }
+        -----------2    
+                    // 解决方法：封装成一个对象进行传递。
+            
+                    function rectan2(rectObj){
+            
+                    }
+            
+                    var rectObj = {
+                        x:19,y:20,width:200,height:300, bgColor:"#ccc",text:"lalala"
+                    };
+                    //一般在三方库中使用
+    </pre>
+
+
+    <script>
+      
+    </script>
+</body>
+</html>

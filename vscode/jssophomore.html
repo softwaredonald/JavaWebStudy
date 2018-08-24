@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数的高级内幕</title>
+
+    <style>
+        h1 {
+            color: red;
+        }
+
+        .s1 {
+            color: orange;
+            font-size: 1.2em;
+
+        }
+
+        .s2 {
+            color: blue;
+            font-size: 1.2em;
+
+        }
+
+        .s3 {
+            color: greenyellow;
+            font-size: 1.3em;
+        }
+
+        .s4 {
+            color: orangered;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+
+<body>
+    <pre>
+        浏览器线程：1.JavaScrpit执行线程：负责执行js代码
+                   2.UI线程：负责UI展示，负责展示给用户看到的页面
+                   3.JavaScript事件循环线程。
+        #1和#2之间是互斥的：JS执行时，UI会卡住不让执行，因为JS会控制UI渲染
+    </pre>
+    <h1>
+        JS的任务（js的代码，js的语句）！！注意这个是js的浏览器过程，是单线程，不同于后端的node.js
+    </h1>
+    <p>
+        同步任务：for,求和，js赋值，js运算符，表单处理…… <br> 异步任务：dom事件，bom的api处理，ajax <br> JavaScript 主线程直接执行同步任务，异步任务先执行一部分，然后退出主线程执行，然后等异步任务准备好后再交给主线程执行
+        <br> 任务无论类型，依次进入任务队列，先进先处理，同步任务就必须完成才能下一个，碰到异步任务，就执行一部分，然后进入下一个，当异步任务准备好之后，从新进入队列，重新排队，在进行执行。这个过程由事件处理过程来处理
+    </p>
+
+
+    <h1>
+        执行上下文相关的概念
+    </h1>
+    <p>
+        首先回顾栈：在栈顶压入数据或者弹出数据：先进后出 <br> EC:函数执行环境 或执行上下文：execution context <span class="s2">就是一个函数要执行所需要的全部东西都会在栈中出现</span>
+        <br> ECS：执行环境栈，execution context stack 代码执行之前就会立刻创建一个全局的执行上下文 Global Excution context<br> 创建完了全局的执行上下文之后，就把全局执行上下文
+        压入 执行环境栈中。 <br>
+        <strong>VO--变量对象 （Variable object）</strong>是说JS的执行上下文中都有个对象用来存放执行上下文中可被访问但是不能被delete的<strong>函数标识符、形参、变量声明</strong>等。它们会被挂在这个对象上，对象的属性对应它们的名字，对象属性的值对应它们的值，但这个对象是规范上或者说是引擎实现上的不可能在JS环境中访问到活动对象。<br>
+        <strong>AO--激活对象 （Activation Object）</strong>有了变量对象存每个上下文中的东西，但是它是什么时候能被访问到呢？就是每进入一个执行上下文时，这个执行上下文中的变量对象就被激活，也就是该上下文中的函数标识符、形参、变量声明等就可以被访问到了。 <br>
+
+        <pre>
+                function f1(){
+                    console.log("f1")
+                }
+                function f2(){
+                    console.log("f2");
+                    f3()
+                }
+                function f3(){
+                    console.log("f3");
+                    f4()
+                }
+                function f4(){
+                    console.log("f4");
+                }
+                f1(); //代码进入执行f1函数，函数内的代码在执行之前，js执行引擎立即创建一个f1的执行环节 f1 Excution context，立即把这个执行环境压入到执行环境栈中ECS
+                
+                //f1()函数执行完成之后，从执行环境栈中弹出 f1的执行上下文。
+                //f2()函数执行之前，创建f2的执行上下文。压栈到执行环境栈中ESC
+                //因为f2中调用f3函数。f3执行函数执行之前也创建了一个f3的执行上下文，并压栈到执行环境栈ESC
+                //因为f3中调用f4函数，f4执行函数执行之前也创建了一个f4的执行上下文，并压栈到执行环境栈ESC
+                //f4返回f3再返回到f2
+
+                f2();
+
+
+                结果
+                --->f1
+                    f2
+                    f3
+                    f4
+        </pre> 解释：
+    </p>
+    <h1>
+        执行上下文的生命周期
+    </h1>
+    <p>
+        创建:1.生成变量对象，2.建立作用域链（重点），3.确定this指向-->执行：1.变量赋值，2.函数引用，3.执行其他代码-->执行完毕后出栈，等待被回收(一般销毁，但是如果出现闭包就会再存会)-->
+    </p>
+    <script>
+
+
+    </script>
+
+
+</body>
+
+</html>
